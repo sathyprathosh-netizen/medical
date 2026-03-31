@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment | Advanced Care</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" defer></script>
+</head>
+<body>
+    <header class="sticky-header">
+        <nav class="navbar container">
+            <a href="#" class="logo">Advanced Care</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="doctors.html" class="nav-link">Doctors</a></li>
+                <li><a href="appointment.html" class="nav-link">Appointment</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="appointment-section section">
+            <div class="container">
+                <h1 class="section-heading">Book an Appointment</h1>
+                <div class="appointment-form-container">
+                    <div class="patient-info">
+                        <h3>Patient Information</h3>
+                        <p>To streamline your appointment, please provide the following details. We are committed to protecting your privacy and ensuring your data is secure.</p>
+                        <div class="contact-info-block">
+                            <h4><i class="fas fa-phone"></i> Emergency Contact</h4>
+                            <p>(555) 123-4567</p>
+                        </div>
+                        <div class="contact-info-block">
+                            <h4><i class="fas fa-envelope"></i> Email Us</h4>
+                            <p>contact@advancedcare.com</p>
+                        </div>
+                    </div>
+                    <form id="appointment-form" action="#" method="post" class="appointment-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Preferred Date</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="time">Preferred Time</label>
+                                <select id="time" name="time" required>
+                                    <option value="" disabled selected>Select a time</option>
+                                    <option value="09:00">09:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="14:00">02:00 PM</option>
+                                    <option value="15:00">03:00 PM</option>
+                                    <option value="16:00">04:00 PM</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="doctor">Select Doctor</label>
+                                <div class="custom-select-wrapper">
+                                    <select id="doctor" name="doctor" class="custom-select">
+                                        <option value="" disabled selected>Choose a doctor</option>
+                                        <option value="Dr. Emily Carter">Dr. Emily Carter - Cardiologist</option>
+                                        <option value="Dr. Ben Harrison">Dr. Ben Harrison - Orthopedic Surgeon</option>
+                                        <option value="Dr. Olivia Chen">Dr. Olivia Chen - Neurologist</option>
+                                        <option value="Dr. Michael Rodriguez">Dr. Michael Rodriguez - Pediatrician</option>
+                                        <option value="Dr. Jessica Wong">Dr. Jessica Wong - Dermatologist</option>
+                                        <option value="Dr. David Lee">Dr. David Lee - Oncologist</option>
+                                        <option value="Dr. Sarah Johnson">Dr. Sarah Johnson - Gastroenterologist</option>
+                                        <option value="Dr. Christopher Kim">Dr. Christopher Kim - Urologist</option>
+                                        <option value="Dr. Amanda Martinez">Dr. Amanda Martinez - Ophthalmologist</option>
+                                        <option value="Dr. James White">Dr. James White - ENT Specialist</option>
+                                        <option value="Dr. Jennifer Brown">Dr. Jennifer Brown - Pulmonologist</option>
+                                        <option value="Dr. Robert Taylor">Dr. Robert Taylor - Endocrinologist</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Additional Information</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-glow">Book Now</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

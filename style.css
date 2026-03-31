@@ -1,1 +1,627 @@
-/* Add styles here */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    --primary-color: #1A237E;
+    --secondary-color: #00BCD4;
+    --accent-color: #E3F2FD;
+    --background-color: #F5F5F5;
+    --text-color: #333;
+    --heading-color: #1A237E;
+    --card-background: #FFFFFF;
+    --heading-font: 'Roboto', sans-serif;
+    --body-font: 'Roboto', sans-serif;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    color: var(--heading-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header, .sticky-header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu li {
+    margin-left: 20px;
+}
+
+.nav-link {
+    color: #333;
+    font-weight: 500;
+}
+
+.hero-section {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: white;
+    border: 2px solid var(--secondary-color);
+}
+
+.btn-primary:hover {
+    background-color: #00acc1;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section-title, .section-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+}
+
+.commitment-section, .awards-section-home, .features-section, .doctors-section-home, .doctors-section, .appointment-section, .about-section, .timeline-section, .awards-section, .testimonials-section, .services-page-section, .faq-section, .blog-section {
+    background-color: white;
+    padding: 80px 0;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.commitment-item, .award-item, .feature, .doctor-card {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.icon {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.item-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.doctor-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.stats-horizontal {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.stats-horizontal .award-item {
+    flex: 1;
+}
+
+.doctor-card-page {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.doctor-card-page:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.doctor-photo-page {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.doctor-name-page {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.doctor-specialty-page {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 40px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 900px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover, .close-button:focus {
+    color: black;
+}
+
+.modal-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.modal-booking-form .form-group {
+    margin-bottom: 15px;
+}
+
+.modal-booking-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--heading-color);
+}
+
+.modal-booking-form input,
+.modal-booking-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.modal-booking-form input:focus,
+.modal-booking-form select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+    outline: none;
+}
+
+.modal-booking-form .btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.appointment-form-container, .contact-form-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    margin-top: 60px;
+    align-items: flex-start;
+}
+
+.appointment-form .form-row, .contact-form .form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.appointment-form .form-group, .contact-form .form-group {
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.appointment-form label, .contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--heading-color);
+}
+
+.appointment-form input, .appointment-form textarea, .appointment-form select, .contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.appointment-form input:focus, .appointment-form textarea:focus, .appointment-form select:focus, .contact-form input:focus, .contact-form textarea:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+    outline: none;
+}
+
+.patient-info, .contact-details {
+    background-color: var(--accent-color);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.patient-info h3, .contact-details h3 {
+    margin-top: 0;
+}
+
+.contact-info-block, .contact-info-item {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-info-block h4 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-color);
+}
+
+.contact-info-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.btn-glow {
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.7);
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px rgba(0, 188, 212, 0.7);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(0, 188, 212, 1);
+    }
+}
+
+.booking-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--card-background);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.booking-form .form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.mission-vision-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 4px solid var(--secondary-color);
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd)::after {
+    right: -10px;
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -10px;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background-color: var(--card-background);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-item {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.testimonial-item h4 {
+    margin-top: 15px;
+    text-align: right;
+    color: var(--secondary-color);
+}
+
+.services-page-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.service-page-card {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-page-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service-page-icon img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.service-page-title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.service-page-description {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.faq-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: var(--card-background);
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.faq-question {
+    padding: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 0;
+    position: relative;
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 20px;
+    max-height: 200px;
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(45deg);
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.blog-post-card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fade-in 0.5s ease-out forwards;
+}
+
+.blog-post-image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.blog-post-content {
+    padding: 25px;
+}
+
+.blog-post-title {
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.blog-post-meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.blog-post-excerpt {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+@keyframes fade-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

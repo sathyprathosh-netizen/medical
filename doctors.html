@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Doctors | Advanced Care</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" defer></script>
+</head>
+<body>
+    <header class="sticky-header">
+        <nav class="navbar">
+            <div class="logo">Advanced Care</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="doctors.html" class="nav-link">Doctors</a></li>
+                <li><a href="appointment.html" class="nav-link">Appointment</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="doctors-section reveal">
+            <div class="container">
+                <h1 class="section-heading">Meet Our Esteemed Team</h1>
+                <div class="doctors-grid">
+                    <div class="doctor-card-page" data-name="Dr. Emily Carter" data-specialty="Cardiologist" data-experience="15+ Years" data-bio="Dr. Carter is a leading expert in cardiovascular health, with a focus on preventative care and innovative treatments. She is a graduate of Johns Hopkins University School of Medicine and has been with Advanced Care for over 10 years.">
+                        <img src="https://images.unsplash.com/photo-1537368910025-700350796527?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dr. Emily Carter" class="doctor-photo-page">
+                        <h3 class="doctor-name-page">Dr. Emily Carter</h3>
+                        <p class="doctor-specialty-page">Cardiologist</p>
+                    </div>
+                    <div class="doctor-card-page" data-name="Dr. Ben Harrison" data-specialty="Orthopedic Surgeon" data-experience="12+ Years" data-bio="Dr. Harrison specializes in minimally invasive surgery and sports medicine, helping patients regain mobility and return to their active lifestyles. He completed his residency at the Mayo Clinic and is a fellow of the American Academy of Orthopaedic Surgeons.">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dr. Ben Harrison" class="doctor-photo-page">
+                        <h3 class="doctor-name-page">Dr. Ben Harrison</h3>
+                        <p class="doctor-specialty-page">Orthopedic Surgeon</p>
+                    </div>
+                    <div class="doctor-card-page" data-name="Dr. Olivia Chen" data-specialty="Neurologist" data-experience="10+ Years" data-bio="Dr. Chen is dedicated to diagnosing and treating complex neurological disorders with a compassionate, patient-first approach. She earned her medical degree from Harvard Medical School and has published numerous research papers on Alzheimer's disease.">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dr. Olivia Chen" class="doctor-photo-page">
+                        <h3 class="doctor-name-page">Dr. Olivia Chen</h3>
+                        <p class="doctor-specialty-page">Neurologist</p>
+                    </div>
+                    <div class="doctor-card-page" data-name="Dr. Michael Rodriguez" data-specialty="Pediatrician" data-experience="8+ Years" data-bio="Dr. Rodriguez is a board-certified pediatrician with a passion for children's health. He provides comprehensive care for infants, children, and adolescents, with a focus on preventative medicine and patient education.">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dr. Michael Rodriguez" class="doctor-photo-page">
+                        <h3 class="doctor-name-page">Dr. Michael Rodriguez</h3>
+                        <p class="doctor-specialty-page">Pediatrician</p>
+                    </div>
+                    <div class="doctor-card-page" data-name="Dr. Jessica Wong" data-specialty="Dermatologist" data-experience="7+ Years" data-bio="Dr. Wong is a leading expert in medical and cosmetic dermatology. She specializes in the treatment of skin cancer, acne, and other common skin conditions, and is known for her artistic approach to cosmetic procedures.">
+                        <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dr. Jessica Wong" class="doctor-photo-page">
+                        <h3 class="doctor-name-page">Dr. Jessica Wong</h3>
+                        <p class="doctor-specialty-page">Dermatologist</p>
+                    </div>
+                    <div class="doctor-card-page" data-name="Dr. David Lee" data-specialty="Oncologist" data-experience="20+ Years" data-bio="Dr. Lee is a compassionate oncologist who is dedicated to providing the highest quality of care to his patients. He specializes in the treatment of all types of cancer and is a strong advocate for a team-based approach to care.">
+                        <img src="https://images.unsplash.com/photo-1582750421715-2b12a44df52e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dr. David Lee" class="doctor-photo-page">
+                        <h3 class="doctor-name-page">Dr. David Lee</h3>
+                        <p class="doctor-specialty-page">Oncologist</p>
+                    </div>
+                    <div class="doctor-card-page" data-name="Dr. Sarah Johnson" data-specialty="Gastroenterologist" data-experience="9+ Years" data-bio="Dr. Johnson specializes in the diagnosis and treatment of diseases of the digestive system. She is an expert in endoscopy and colonoscopy, and is committed to providing her patients with the most advanced care available.">
+                        <img src="https://images.unsplash.com/photo-1605087882424-3f837afe3a22?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dr. Sarah Johnson" class="doctor-photo-page">
+                        <h3 class="doctor-name-page">Dr. Sarah Johnson</h3>
+                        <p class="doctor-specialty-page">Gastroenterologist</p>
+                    </div>
+                    <div class="doctor-card-page" data-name="Dr. Christopher Kim" data-specialty="Urologist" data-experience="11+ Years" data-bio="Dr. Kim is a board-certified urologist who specializes in the treatment of diseases of the urinary tract. He is an expert in robotic surgery and is committed to providing his patients with the most minimally invasive treatment options available.">
+                        <img src="https://images.unsplash.com/photo-1612349316228-5942a928de0e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dr. Christopher Kim" class="doctor-photo-page">
+                        <h3 class="doctor-name-page">Dr. Christopher Kim</h3>
+                        <p class="doctor-specialty-page">Urologist</p>
+                    </div>
+                    <div class="doctor-card-page" data-name="Dr. Amanda Martinez" data-specialty="Ophthalmologist" data-experience="6+ Years" data-bio="Dr. Martinez is a board-certified ophthalmologist who specializes in the diagnosis and treatment of diseases of the eye. She is an expert in cataract surgery and is committed to providing her patients with the best possible vision.">
+                        <img src="https://images.unsplash.com/photo-1623913504868-5a0dc5034330?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dr. Amanda Martinez" class="doctor-photo-page">
+                        <h3 class="doctor-name-page">Dr. Amanda Martinez</h3>
+                        <p class="doctor-specialty-page">Ophthalmologist</p>
+                    </div>
+                    <div class="doctor-card-page" data-name="Dr. James White" data-specialty="ENT Specialist" data-experience="14+ Years" data-bio="Dr. White is a board-certified otolaryngologist who specializes in the diagnosis and treatment of diseases of the ear, nose, and throat. He is an expert in sinus surgery and is committed to providing his patients with the best possible care.">
+                        <img src="https://plus.unsplash.com/premium_photo-1661757224282-a9a7a083b484?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dr. James White" class="doctor-photo-page">
+                        <h3 class="doctor-name-page">Dr. James White</h3>
+                        <p class="doctor-specialty-page">ENT Specialist</p>
+                    </div>
+                    <div class="doctor-card-page" data-name="Dr. Jennifer Brown" data-specialty="Pulmonologist" data-experience="9+ Years" data-bio="Dr. Brown is a board-certified pulmonologist who specializes in the diagnosis and treatment of diseases of the lungs. She is an expert in asthma and COPD, and is committed to helping her patients breathe easier.">
+                        <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dr. Jennifer Brown" class="doctor-photo-page">
+                        <h3 class="doctor-name-page">Dr. Jennifer Brown</h3>
+                        <p class="doctor-specialty-page">Pulmonologist</p>
+                    </div>
+                    <div class="doctor-card-page" data-name="Dr. Robert Taylor" data-specialty="Endocrinologist" data-experience="18+ Years" data-bio="Dr. Taylor is a board-certified endocrinologist who specializes in the diagnosis and treatment of diseases of the endocrine system. He is an expert in diabetes and thyroid disorders, and is committed to helping his patients live healthier lives.">
+                        <img src="https://images.unsplash.com/photo-1622902046580-2b4b3a93321d?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dr. Robert Taylor" class="doctor-photo-page">
+                        <h3 class="doctor-name-page">Dr. Robert Taylor</h3>
+                        <p class="doctor-specialty-page">Endocrinologist</p>
+                    </div>
+                    <div class="doctor-card-page" data-name="Dr. Mary Johnson" data-specialty="Rheumatologist" data-experience="16+ Years" data-bio="Dr. Johnson is a board-certified rheumatologist who specializes in the diagnosis and treatment of diseases of the joints, muscles, and bones. She is an expert in arthritis and autoimmune diseases, and is committed to helping her patients live pain-free lives.">
+                        <img src="https://images.unsplash.com/photo-1607990283143-e8ae2d25554d?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dr. Mary Johnson" class="doctor-photo-page">
+                        <h3 class="doctor-name-page">Dr. Mary Johnson</h3>
+                        <p class="doctor-specialty-page">Rheumatologist</p>
+                    </div>
+                    <div class="doctor-card-page" data-name="Dr. William Davis" data-specialty="Nephrologist" data-experience="13+ Years" data-bio="Dr. Davis is a board-certified nephrologist who specializes in the diagnosis and treatment of diseases of the kidneys. He is an expert in dialysis and kidney transplantation, and is committed to providing his patients with the best possible care.">
+                        <img src="https://images.unsplash.com/photo-1591604021695-0c69d07d698a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dr. William Davis" class="doctor-photo-page">
+                        <h3 class="doctor-name-page">Dr. William Davis</h3>
+                        <p class="doctor-specialty-page">Nephrologist</p>
+                    </div>
+                    <div class="doctor-card-page" data-name="Dr. Richard Miller" data-specialty="Allergist" data-experience="10+ Years" data-bio="Dr. Miller is a board-certified allergist who specializes in the diagnosis and treatment of allergies. He is an expert in immunotherapy and is committed to helping his patients find relief from their allergies.">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dr. Richard Miller" class="doctor-photo-page">
+                        <h3 class="doctor-name-page">Dr. Richard Miller</h3>
+                        <p class="doctor-specialty-page">Allergist</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Doctor Modal -->
+        <div id="doctor-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <div class="modal-body">
+                    <div class="modal-doctor-details">
+                        <h2 id="modal-doctor-name"></h2>
+                        <p id="modal-doctor-specialty"></p>
+                        <p><strong>Experience:</strong> <span id="modal-doctor-experience"></span></p>
+                        <p id="modal-doctor-bio"></p>
+                    </div>
+                    <div class="modal-booking-form">
+                        <h3>Book an Appointment</h3>
+                        <form id="booking-form">
+                            <div class="form-group">
+                                <label for="patient-name">Full Name</label>
+                                <input type="text" id="patient-name" name="patient-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="patient-email">Email Address</label>
+                                <input type="email" id="patient-email" name="patient-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="patient-phone">Phone Number</label>
+                                <input type="tel" id="patient-phone" name="patient-phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-date">Select Date</label>
+                                <input type="date" id="booking-date" name="booking-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-time">Select Time</label>
+                                <select id="booking-time" name="booking-time" required>
+                                    <option value="" disabled selected>Select a time</option>
+                                    <option value="09:00">09:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="14:00">02:00 PM</option>
+                                    <option value="15:00">03:00 PM</option>
+                                    <option value="16:00">04:00 PM</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-glow">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="firebase-config.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
